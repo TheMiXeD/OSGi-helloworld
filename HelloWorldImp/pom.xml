@@ -2,21 +2,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>OSGi-helloworld</artifactId>
-        <groupId>nl.clanzone</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <artifactId>OSGi-helloworld</artifactId>
+    <groupId>nl.clanzone</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
-    <artifactId>HelloWorld</artifactId>
+    <artifactId>HelloWorldImp</artifactId>
     <packaging>bundle</packaging>
 
-    <name>HelloWorld OSGi Bundle</name>
+    <name>HelloWorldImp OSGi Bundle</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>nl.clanzone</groupId>
+            <artifactId>HelloWorld</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
@@ -25,11 +35,11 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.4.0</version>
+                <version>2.3.7</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>nl.clanzone.helloworld.Activator</Bundle-Activator>
+                        <Bundle-Activator>nl.clanzone.helloworldimp.Activator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
