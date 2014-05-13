@@ -20,11 +20,25 @@
                 <version>4.3.1</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+                <version>4.3.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>osgi-cdi-api</artifactId>
+                <version>3.1.1-b05</version>
+                <type>jar</type>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
     <modules>
         <module>HelloWorld</module>
         <module>HelloWorldImp</module>
-    </modules>
+    <module>HelloWorldClient</module>
+  </modules>
 </project>
